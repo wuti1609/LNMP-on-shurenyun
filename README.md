@@ -120,9 +120,7 @@ pm.max_spare_servers = 20
 
 ### 2.1 部署 MYSQL
 
-2.1.1 选择"应用管理"中的"新建应用"，如图所示：  
-
-![新建应用](add-mysql.png)  
+2.1.1 选择"应用管理"中的"新建应用"
 
 2.1.2 新建应用  
 
@@ -145,21 +143,19 @@ pm.max_spare_servers = 20
 
 选择容器规格： CPU：1   内存：512 MB  
 
-![新建应用](add-mysql2.png)  
+![新建应用](png/add-mysql2.png)  
 
 高级设置：  
 
 填写环境变量参数：
 ```Key:MYSQL_ROOT_PASSWORD  Value:123456```  
 
-![新建应用](add-mysql3.png)  
+![新建应用](png/add-mysql3.png)  
 填写完成后，点击创建。  
 
 ### 2.2 部署 PHP
 
-2.2.1 选择"应用管理"中的"新建应用"，如图所示：  
-
-![新建应用](add-mysql.png)  
+2.2.1 选择"应用管理"中的"新建应用"
 
 2.2.2 新建应用  
 
@@ -171,17 +167,17 @@ pm.max_spare_servers = 20
 
 填写镜像版本：v1  
   
-网络模式：HOST模式
+网络模式：网桥模式
 
 主机选择：（选定一台主机 IP）
 
 选择容器规格： CPU：1   内存：512 MB  
 
-![新建应用](add-php1.png)  
+![新建应用](png/add-php1.png)  
 
 高级设置：  
 
-填写应用地址：  端口：8090，类型：对内 HTTP  
+填写应用地址：  端口：8090，类型：对外 HTTP  
 选择“对外  HTTP”方式，则该应用会向内部代理注册， 网关对外暴露8090端口；  
 
 填写环境变量参数：  
@@ -189,9 +185,10 @@ pm.max_spare_servers = 20
 ```Key:MYSQL_USER      Value:root```  
 ```Key:MYSQL_PASSWORD  Value:123456```  
 
-![新建应用](add-php2.png)  
+![新建应用](png/add-php2.png)  
 填写完成后，点击创建。  
 
 ## 3 测试
 
 访问外部网关所在主机的8090端口，具体地址见：```http://ip:8090/index.php```，若看到以下页面内容，则表示 LNMP 部署已经成功。
+![应用页面](png/app.png)
