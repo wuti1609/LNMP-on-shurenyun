@@ -18,4 +18,9 @@ RUN chmod +x /start.sh
 
 EXPOSE 80
 
+RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php5/fpm/pool.d/www.conf && \
+    sed -i "s/pm.start_servers = 2/pm.start_servers = 5/" /etc/php5/fpm/pool.d/www.conf && \
+    sed -i "s/pm.min_spare_servers = 1/pm.min_spare_servers = 5/" /etc/php5/fpm/pool.d/www.conf && \
+    sed -i "s/pm.max_spare_servers = 3/pm.max_spare_servers = 20/" /etc/php5/fpm/pool.d/www.conf
+
 CMD bash /start.sh && service php5-fpm start && nginx

@@ -72,7 +72,7 @@ PHP 是一种在服务器端执行的嵌入 HTML 文档的脚本语言，目前�
 
 其中，PHP有两个memcache客户端：php5-memcache 和 php5-memcached。php-memcache独立用 PHP 实现，是老客户端，功能少，可设置的属性也少；php5-memcached是基于原生 C 的 libmemcached 的扩展，更加完善，建议使用 php5-memcached。
 
->若要优化 php5-fpm，则编辑```/etc/php5/fpm/php-fpm.conf，修改以下取值：  
+>若要优化 php5-fpm，则编辑```/etc/php5/fpm/pool.d/www.conf，修改以下取值：  
 pm.max_children = 20   
 pm.start_servers = 5   
 pm.min_spare_servers = 5   
